@@ -92,7 +92,7 @@ body {
   align-items: center;
   padding-left: 0;
 }
- @media (min-width: 1000px) and (max-width : 1586px) {
+ @media (min-width: 1000px)  {
     .botones-derecha-izquierda {
         height: 100%;
         width: 100%;
