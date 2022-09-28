@@ -1,11 +1,12 @@
 .container-pokemon {
   display: grid;
-  grid-template-columns: repeat(3, 104px);
-  grid-template-rows: 112px 112px 112px;
+  grid-template-columns: repeat(auto-fit,
+  minmax(100px, 1fr));
   grid-gap: 6px;
   justify-content: center;
-  align-content: center;
-  height: 60vh;
+  align-items: center;
+  width: 95%;
+  margin: 15px auto;
 }
 
 .card-pokemon {
@@ -49,6 +50,10 @@ img {
   position: relative;
 }
 
+.foto-card-pokemon > img {
+  height: 100px;
+}
+
 .Rock {
   background-color: #b69e31;
   color: #b69e31;
@@ -59,82 +64,82 @@ img {
   color: #70559b;
 }
 
-.Steel {
+.steel {
   background-color: #b7b9d0;
   color: #b7b9d0;
 }
 
-.Water {
+.water {
   background-color: #6493eb;
   color: #6493eb;
 }
 
-.Grass {
+.grass {
   background-color: #74cb48;
   color: #74cb48;
 }
 
-.Psychic {
+.psychic {
   background-color: #fb5584;
   color: #fb5584;
 }
 
-.Ice {
+.ice {
   background-color: #9ad6df;
   color: #9ad6df;
 }
 
-.Dark {
+.dark {
   background-color: #75574c;
   color: #75574c;
 }
 
-.Fairy {
+.fairy {
   background-color: #e69eac;
   color: #e69eac;
 }
 
-.Normal {
+.normal {
   background-color: #aaa67f;
   color: #aaa67f;
 }
 
-.Fighting {
+.fighting {
   background-color: #c12239;
   color: #c12239;
 }
 
-.Flying {
+.flying {
   background-color: #a891ec;
   color: #a891ec;
 }
 
-.Poison {
+.poison {
   background-color: #a43e9e;
   color: #a43e9e;
 }
 
-.Ground {
+.ground {
   background-color: #dec16b;
   color: #dec16b;
 }
 
-.Bug {
+.bug {
   background-color: #a7b723;
   color: #a7b723;
 }
 
-.Fire {
+.fire {
   background-color: #f57d31;
   color: #f57d31;
 }
 
-.Electric {
+.electric {
   background-color: #f9cf30;
   color: #f9cf30;
 }
 
-.Dragon {
+.dragon {
   background-color: #7037ff;
   color: #7037ff;
 }
@@ -174,6 +179,7 @@ img {
 .img-container {
   display: flex;
   width: 50%;
+  height: 30%;
   justify-content: space-around;
   margin-left: 20px;
 }
