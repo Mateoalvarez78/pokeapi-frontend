@@ -9,6 +9,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Login from "./components/Login/Login";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 
     <BrowserRouter>
     <Routes>
+      <Route path="/login" element={<Login/>}></Route>
       <Route path="/" element={<Pokedex POKE_ARRAY={POKE_ARRAY}/>}></Route>
       <Route path=":nombre" element={<Card/>}></Route>
     </Routes>
