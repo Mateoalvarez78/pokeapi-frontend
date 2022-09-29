@@ -16,7 +16,7 @@ const Login = () => {
                 
                 <form>
                 <input type="email" className="box" name="fname" placeholder="ejemplo@gmail.com"/><br></br>
-                <input type="text" className="box" name="lname" placeholder="Contraseña"/><br></br>
+                <input type="password" className="box" name="lname" placeholder="Contraseña"/><br></br>
                 <input type="submit" value="" className="boton-submit">
                     
                 </input>
