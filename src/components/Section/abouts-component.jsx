@@ -1,38 +1,48 @@
 import "./abouts-component.css"
-
+import { useEffect, useState } from "react";
+import funcionesApi from "../api/pokemonesApi";
+import './abouts-component'
 import React from "react";
 
-const Porcentajes = ({pokemon}) => {
+const Porcentajes = ({pokemon, stats}) => {
+
   
-  const item = pokemon
-  console.log(item)
+ 
+
+console.log("pokemon!!::",pokemon)
+
+  
+  let statPokemon = stats.filter((poke) => {
+    return poke.id == pokemon.cod
+  })
+
+  
+  const item = statPokemon
+  console.log("stats!!! ",statPokemon)
 
   return (
     <section>
-    
       
-          <>
             <div className="card">
-
               <div className="skills">
                 <p
-                  className={`skills-tech ${item.tipo[0]}`}
+                  className={`skills-tech ${pokemon.tipo1}`}
                   style={{ background: "whitesmoke" }}
                 >
                   HP
                 </p>
                 <div className="container-porcentaje">
-                  <p>{item.stats.hp}</p>
+                  <p>{item[0].hp}</p>
                   
                   <div className="container-skills-bar">
                     <div
-                      className={`skills-bar ${item.tipo[0]}` }
-                      style={{ background: `${item.tipo[0]}` }}
+                      className={`skills-bar ${pokemon.tipo1}` }
+                      
                     >
                     </div>
                       <div
-                        className={`barra-porcentaje ${item.tipo[0]}`}
-                        style={{ width: `${parseInt(item.stats.hp)}px` }}
+                        className={`barra-porcentaje ${pokemon.tipo1}`}
+                        style={{ width: `${item[0].hp}px` }}
                       ></div>
                   </div>
 
@@ -40,21 +50,21 @@ const Porcentajes = ({pokemon}) => {
               </div>
               <div className="skills">
                 <p
-                  className={`skills-tech ${item.tipo[0]}`}
+                  className={`skills-tech ${item.tipo1}`}
                   style={{ background: "whitesmoke" }}
                 >
                   ATK
                 </p>
                 <div className="container-porcentaje">
-                  <p>{item.stats.atk}</p>
+                  <p>{item[0].atk}</p>
                   <div>
 
                 <div>
                   <div
-                    className={`barra-porcentaje ${item.tipo[0]}`}
-                    style={{ width: `${parseInt(item.stats.atk)}px` }}
+                    className={`barra-porcentaje ${pokemon.tipo1}`}
+                    style={{ width: `${item[0].atk}px` }}
                     ></div>
-                  <div className={`skills-bar ${item.tipo[0]}` }>
+                  <div className={`skills-bar ${pokemon.tipo1}` }>
                   </div>
                 </div>
                     
@@ -64,88 +74,86 @@ const Porcentajes = ({pokemon}) => {
               </div>
               <div className="skills">
                 <p
-                  className={`skills-tech ${item.tipo[0]}`}
+                  className={`skills-tech ${item.tipo1}`}
                   style={{ background: "whitesmoke" }}
                 >
                   DEF
                 </p>
                 <div className="container-porcentaje">
-                  <p>{item.stats.def}</p>
+                  <p>{item[0].def}</p>
                   <div>
                     <div
-                      className={`barra-porcentaje ${item.tipo[0]}`}
-                      style={{ width: `${parseInt(item.stats.def)}px` }}
+                      className={`barra-porcentaje ${pokemon.tipo1}`}
+                      style={{ width: `${item[0].def}px` }}
                     ></div>
-                  <div className={`skills-bar ${item.tipo[0]}` }>
+                  <div className={`skills-bar ${pokemon.tipo1}` }>
                   </div>
                   </div>
                 </div>
               </div>
               <div className="skills">
                 <p
-                  className={`skills-tech ${item.tipo[0]}`}
+                  className={`skills-tech ${item.tipo1}`}
                   style={{ background: "whitesmoke" }}
                 >
                   SATK
                 </p>
                 <div className="container-porcentaje">
-                  <p>{item.stats.satk}</p>
+                  <p>{item[0].satk}</p>
                 <div>
                     <div
-                      className={`barra-porcentaje ${item.tipo[0]}`}
-                      style={{ width: `${parseInt(item.stats.satk)}px` }}
+                      className={`barra-porcentaje ${pokemon.tipo1}`}
+                      style={{ width: `${item[0].satk}px` }}
                     ></div>
-                  <div className={`skills-bar ${item.tipo[0]}` }>
+                  <div className={`skills-bar ${pokemon.tipo1}` }>
                   </div>
 
                 </div>
-
-
 
                 </div>
               </div>
               <div className="skills">
                 <p
-                  className={`skills-tech ${item.tipo[0]}`}
+                  className={`skills-tech ${pokemon.tipo1}`}
                   style={{ background: "whitesmoke" }}
                 >
                   SDEF
                 </p>
                 <div className="container-porcentaje">
-                  <p>{item.stats.sdef}</p>
+                  <p>{item[0].sdef}</p>
 
                   <div>
                     <div
-                      className={`barra-porcentaje ${item.tipo[0]}`}
-                      style={{ width: `${parseInt(item.stats.sdef)}px` }}
+                      className={`barra-porcentaje ${pokemon.tipo1}`}
+                      style={{ width: `${item[0].sdef}px` }}
                     ></div>
-                  <div className={`skills-bar ${item.tipo[0]}` }>
+                  <div className={`skills-bar ${pokemon.tipo1}` }>
                   </div>
                   </div>
                 </div>
               </div>
               <div className="skills">
                 <p
-                  className={`skills-tech ${item.tipo[0]}`}
+                  className={`skills-tech ${item.tipo1}`}
                   style={{ background: "whitesmoke" }}
                 >
                   SPD
                 </p>
                 <div className="container-porcentaje">
-                  <p>{item.stats.spd}</p>
+                  <p>{item[0].spd}</p>
                   <div>
                     <div
-                      className={`barra-porcentaje ${item.tipo[0]}`}
-                      style={{ width: `${parseInt(item.stats.spd)}px` }}
+                      className={`barra-porcentaje ${pokemon.tipo1}`}
+                      style={{ width: `${item[0].spd}px` }}
                     ></div>
-                  <div className={`skills-bar ${item.tipo[0]}` }>
+                  <div className={`skills-bar ${pokemon.tipo1}` }>
                   </div>
                   </div>
                   
                 </div>
               </div>
             </div>
-          </>
+
     </section>
   );
 };

@@ -11,7 +11,6 @@ import { useEffect } from "react";
 import funcionesApi from "../api/pokemonesApi";
 
 
-
 const Pokedex = () => {
     const navigate = useNavigate();
     
@@ -20,6 +19,7 @@ const Pokedex = () => {
     const [mostrarIcono, setMostrarIcono] = useState(false)
     const [estadoInput, setEstadoInput] = useState("")
     const [pokemonApi, setPokemonApi] = useState([])
+    
 
     async function getPokemon() {
         let data = await funcionesApi.obtenerPokemones()
@@ -48,9 +48,6 @@ const Pokedex = () => {
     }
     };
     
-
-   
-
     const ordenarPokemon = () => {
 
         if(estadoButton === 0) {
