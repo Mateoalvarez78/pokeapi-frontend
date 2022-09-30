@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+.Contenedor {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 30% 20% 50%;
+}
+
+.imagen-pokemones {
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+}
+.descripcion-bienvenidos {
+    grid-row: 2;
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.bienvenidos {
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.descripcion {
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input {
+    grid-row: 3;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+.box {
+    height: 35px;
+    width: 250px;
+    border-radius: 7px;
+    box-shadow: none;
+    margin: 20px 0;
+}
+.boton-submit {
+    margin-top: 20px;
+    border-radius: 50%;
+    background-image: url(../Imagenes/POKEBOLA.png);
+    background-size: cover;
+    width: 65px;
+    height: 65px;
+    border: none;
+    cursor: pointer;
+}
