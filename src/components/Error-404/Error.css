@@ -1,0 +1,34 @@
+.contenedor {
+    height: 100vh;
+    background-color: #283b41;
+}
+.contenedor-imagen {
+    width: 100%;
+}
+.imagen-error {
+    width: 100%;
+}
+.mensaje {
+    color: whitesmoke;
+}
+.oops {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.descripcion {
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pikachu-enojado {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pikachu-enojado-imagen {
+    width: 35vh;
+    height: 35vh;
+}
