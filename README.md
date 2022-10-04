@@ -9,7 +9,7 @@ Proyecto final de Pokeapi (frontend)
 
 ### INSTALACION
 
-Para poder correr este proyecto se debe de tener descargado node en su entorno (Visual Studio Code)
+Para poder correr este proyecto se debe de tener descargado react en su entorno (Visual Studio Code)
 Luego de clonado el repositorio correr en la consola:
 
 "npm install"         ;        "npm start"
