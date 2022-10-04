@@ -1,0 +1,60 @@
+.contenedor {
+    background-color: whitesmoke;
+}
+.descripcion {
+    text-align: center;
+}
+.boton-ingresar {
+    width: 120px;
+    height: 35px;
+    border-color: white;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color .15s ease-in-out;
+}
+  
+.boton-ingresar:hover, .boton-ingresar:focus {
+    background-color: #0069d9;
+}
+  
+.boton-ingresar:active {
+    background-color: #0062cc;
+}
+
+.boton-registrar {
+    width: 120px;
+    height: 35px;
+    border-color: white;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    background-color: #258d19;
+    color: #fff;
+    transition: background-color .15s ease-in-out;
+}
+  
+.boton-registrar:hover, .boton-registrar:focus {
+    background-color: #258d19;
+}
+  
+.boton-registrar:active {
+    background-color: #258d19;
+}
+.botones {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-imagen-pikachu {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.imagen-pikachu-saludando {
+    width: 40%;
+    height: 40%;
+}

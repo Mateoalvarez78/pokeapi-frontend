@@ -6,7 +6,7 @@ const Login = () => {
     return (
         <div className="Contenedor">
             <div className="contenedor-imagen-pokemones">
-                <img className="imagen-pokemones" src={require('../Imagenes/Pokemones.jpeg')}/>
+                <img className="imagen-pokemones" src={require('../../../public/Img/FondoPokemones.jpg')}/>
             </div>
             <div className="descripcion-bienvenidos">
                     <div className="bienvenidos"><h1 className="titulo">¡BIENVENIDOS!</h1></div>
