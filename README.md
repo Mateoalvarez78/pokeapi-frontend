@@ -28,6 +28,8 @@ El software no esta abierto a contribuciones.
 
 Usuarios de github de los autores:
 Mateoalvarez78
+Bpbot33
+En7i
 mauriibarra
 
 
