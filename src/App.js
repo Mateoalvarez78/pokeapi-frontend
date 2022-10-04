@@ -1,9 +1,10 @@
 import Pokedex from "./components/main/Pokemon";
 import Card from "./components/Section/card-pokemon";
+import PostPokemon from "./components/main/agregar-pokemon/post-pokemon";
+import Register from "./components/register/register";
 import "./App.css";
 
-import React, { useState } from "react";
-import funcionesApi from "./components/api/pokemonesApi";
+import React from "react";
 
 import {
   BrowserRouter,
@@ -19,6 +20,8 @@ function App() {
 
     <BrowserRouter>
     <Routes>
+      <Route path="/register" element={<Register/>}></Route>
+      <Route path="/agregarPokemon" element={<PostPokemon/>}></Route>
       <Route path="/pokemones" element={<Pokedex />}></Route>
       <Route path=":nombre" element={<Card/>}></Route>
     </Routes>

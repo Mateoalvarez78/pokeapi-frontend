@@ -4,39 +4,42 @@ import Porcentajes from "./abouts-component"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+
 import funcionesApi from "../api/pokemonesApi";
 
 const Card = () => {
     
         const [pokemonApi, setPokemonApi] = useState([])
         const [stats, setStats] = useState([])
+       
 
         let {nombre} = useParams()
 
-        let navigate =  useNavigate()
+        
         
         async function getPokemon() {
             let data = await funcionesApi.obtenerPokemones()
             let data2 = await funcionesApi.obtenerStats()
+            
+            
             setPokemonApi([...data])
             setStats([...data2])
+            
         }
     
         useEffect(() => {
             getPokemon()
-        },[0])
-
-
-        
-        
+        },[])
 
         let todosLosPokemones = pokemonApi.filter((pokemon) => {
             return pokemon.name === nombre
          })
        
-        let pokemon = todosLosPokemones;
+        let pokemon = todosLosPokemones
+            
         
+        
+       
     /*
 
     function moverIzquierda ()  {
@@ -99,7 +102,7 @@ const Card = () => {
                 <div className="Tipo-pokemon">
                     <ul className="Tipo-pokemon-lista" style={{color: "white"}}>
                         <span className={`parrafo-tipo ${pokemon.tipo1}`}>{pokemon.tipo1}</span>
-                        {pokemon.tipo2 ? (<span className={`parrafo-tipo ${pokemon.tipo1}`}>{pokemon.tipo2}</span>): null}
+                        {pokemon.tipo2 ? (<span className={`parrafo-tipo ${pokemon.tipo2}`}>{pokemon.tipo2}</span>): null}
                     </ul>
                 </div>
                 <div className="Peso-altura-movimientos">
@@ -120,8 +123,8 @@ const Card = () => {
                             <p className="texto-height">height</p>
                         </div>
                             <div className="div-moves">
-                            <p style={{color: "#212121"}} className={`parrafo-moves `}>moves</p>
-                            <p style={{color: "#212121"}} className={`parrafo-moves `}>moves</p>
+                            <p style={{color: "#212121"}} className={`parrafo-moves `}>{pokemon.move1}</p>
+                            <p style={{color: "#212121"}} className={`parrafo-moves `}>{pokemon.move2}</p>
                             <p className="texto-moves">moves</p>
                         </div>
                     </div>

@@ -2,17 +2,13 @@ import { useState } from "react";
 import React from "react";
 import "./pokemon.css"
 import { Link, Outlet } from "react-router-dom";
-import Card from "../Section/card-pokemon";
-
-import { useNavigate } from "react-router-dom";
 
 import { useEffect } from "react";
-
 import funcionesApi from "../api/pokemonesApi";
+import AgregarPokemon from "./agregar-pokemon/agregar-pokemon";
 
 
 const Pokedex = () => {
-    const navigate = useNavigate();
     
     
     const [estadoButton, setEstadoButton] = useState(0);
@@ -89,13 +85,13 @@ const Pokedex = () => {
                 </div>
             </header>
             <div className="container-pokemon">
-                
+                <AgregarPokemon/>
                  {pokemonApi.map((item, i) => { return (
                 <>
                      <Link key={item.name} className={`card-pokemon ${item.tipo1}`} 
                      to={`/${item.name}`}>
                         <div className="foto-card-pokemon">
-                            <p className="id-pokemon">{item.id}</p>
+                            <p className="id-pokemon">{item.cod}</p>
                             <img src={item.img} alt="" />
                         </div>
                         <p className="nombre-pokemon">{item.name}</p>

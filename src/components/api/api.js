@@ -2,7 +2,7 @@
 import axios from "axios";
 
 
-const POKE_API = "http://localhost:3010/pokemones/"
+const POKE_API = "http://localhost:3010/pokemones"
 
 let apiPokemones = axios.create({
   baseURL: POKE_API,

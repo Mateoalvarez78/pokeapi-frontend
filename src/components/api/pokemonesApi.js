@@ -1,4 +1,6 @@
+import axios from 'axios';
 import apiPokemones from './api'
+
 
 
 const funcionesApi = {
@@ -34,6 +36,39 @@ const funcionesApi = {
         throw err;
       });
   },
+
+  agregarPokemon: async(nombre) => {
+    const url = "/agregarPokemon";
+    const body = {nombre: nombre}
+
+    const comprobarPokemon = await axios.get('http://localhost:3010/pokemones')
+    const pokemonEncontrado = comprobarPokemon.data.find((item) => {
+      
+      if (item.name === body.nombre){
+        return true
+      }
+      else {
+        return false
+      }
+    })
+    
+    return await apiPokemones.post(url, body).then((res) => {
+
+        if (pokemonEncontrado) {
+          alert("Ya existe el pokemon")
+          return res.data;
+        } 
+        else {
+          alert(`Se ingresó correctamente ${body.nombre}`)
+        }
+      })
+      .catch((err) => {
+        console.log("Error: ", err);
+        throw err;
+      });
+  }, 
+  
+  
 
 };
 

@@ -1,24 +1,17 @@
 import "./abouts-component.css"
-import { useEffect, useState } from "react";
-import funcionesApi from "../api/pokemonesApi";
+
+
 import './abouts-component'
 import React from "react";
 
 const Porcentajes = ({pokemon, stats}) => {
 
-  
- 
-
-console.log("pokemon!!::",pokemon)
-
-  
   let statPokemon = stats.filter((poke) => {
-    return poke.id == pokemon.cod
+    return poke.id == pokemon.id
   })
 
-  
   const item = statPokemon
-  console.log("stats!!! ",statPokemon)
+ 
 
   return (
     <section>
