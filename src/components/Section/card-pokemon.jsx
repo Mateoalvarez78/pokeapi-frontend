@@ -90,7 +90,7 @@ const Card = () => {
                 <div className="Contenedor-name-id-pk">
                     <div className="Contenedor-nombre-pokemon">
                         <Link to="/pokemones"><img className="Boton-atras-flecha" src="./Img/flecha-izquierda-blanca.png" alt="Boton para regresar" /></Link>
-                        <h2 className="Nombre-pokemon">{pokemon.nombre}</h2>
+                        <h2 className="Nombre-pokemon">{pokemon.name}</h2>
                     </div>
                     <div className="ID-pokemon">
                         <p>{pokemon.id}</p>

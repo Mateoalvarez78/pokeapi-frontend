@@ -1,4 +1,4 @@
-.contenedor {
+.contenedor-error {
     height: 100vh;
     background-color: #283b41;
 }
@@ -11,6 +11,12 @@
 
 .mensaje {
     color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    height: 30vh;
 }
 .oops {
     display: flex;
@@ -18,10 +24,12 @@
     align-items: center;
 }
 .descripcion {
-    padding-left: 10px;
+    
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 90%;
+    margin-top: 10px;
 }
 .pikachu-enojado {
     margin-top: 10px;

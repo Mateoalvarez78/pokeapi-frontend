@@ -41,19 +41,25 @@ body {
   color: white;
   display: flex;
   flex-direction: row;
-  padding: 10px;
   align-items: center;
   justify-content: space-around;
   width: 60%;
   height: 35px;
+  
 }
+
+.Contenedor-nombre-pokemon > a {
+
+display: flex;
+}
+
 .Nombre-pokemon {
   font-weight: bold;
-  font-size: 32px;
+  font-size: 25px;
 }
 .Boton-atras-flecha {
   width: 25px;
-  height: 35px;
+  height: 100%;
   transform: scale(100%);
 }
 .Contenedor-stats-pk {
@@ -68,7 +74,7 @@ body {
   font-weight: bold;
   display: flex;
   align-items: center;
-  height: 55px;
+  height: 35px;
 }
 .Imagen-pokemon {
   position: absolute;
@@ -171,7 +177,7 @@ body {
   .Contenedor-nombre-pokemon {
     grid-row: 1;
     color: white;
-    padding: 10px;
+    padding: 0px;
     align-items: center;
     justify-content: left;
     width: 60%;
