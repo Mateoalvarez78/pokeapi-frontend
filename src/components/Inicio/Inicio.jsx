@@ -25,7 +25,7 @@ const Inicio = () => {
                 <button className="boton-ingresar" onClick={moverALogin}>Ingresar</button>
                 <button className="boton-registrar" onClick={dirigirRegister}>Registrarse</button>
             </div>
-           <div className="pokeball-inicio"><img src={require('./assets/pngegg.png')}/></div> 
+           <div className="pokeball-inicio"><img src={require('./assets/pngegg.png')} alt=""/></div> 
         </div>
     ) 
 }

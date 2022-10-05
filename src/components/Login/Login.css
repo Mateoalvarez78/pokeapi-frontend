@@ -1,10 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
-.Contenedor {
+.Contenedor-login {
     height: 100vh;
     width: 100%;
-    display: grid;
-    grid-template-rows: 30% 20% 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./assets/FondoPokemones2.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Silkscreen', cursive;
+    color: white;
+}
+
+.volver-atras {
+    height: 15%;
+    display: flex;
+    position: relative;
+    right: 120px;
+    bottom: 80px;
+}
+
+.volver-atras > img{
+    margin: auto;
+    width: 10%;
+    height: 40%; 
+    transform: scale(100%);
 }
 
 .imagen-pokemones {
@@ -14,7 +35,6 @@
 }
 .descripcion-bienvenida {
     grid-row: 2;
-    background-color: whitesmoke;
     display: grid;
     grid-template-rows: 1fr 1fr;
     padding-left: 5px;
@@ -37,7 +57,6 @@
     display: flex; 
     justify-content: center;
     align-items: center;
-    background-color: whitesmoke;
 }
 .box {
     height: 35px;
