@@ -5,7 +5,7 @@ const Error = () => {
     return (
         <div className="contenedor-error">
             <div className="contenedor-imagen">
-                <img className="imagen-error" src={require("./assets/Error_404.png")}/>
+                <img className="imagen-error" src={require("./assets/Error_404.png")} alt="" />
             </div>
             <div className="mensaje">
                 <div className="oops"><h1>Oops!</h1></div>
