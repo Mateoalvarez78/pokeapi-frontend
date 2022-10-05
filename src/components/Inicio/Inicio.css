@@ -1,9 +1,33 @@
-.contenedor {
+.contenedor-inicio {
     background-color: whitesmoke;
-}
-.descripcion {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/FondoPokemones.jpg');
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     text-align: center;
+   
 }
+
+.contenedor-bienvenida {
+    height: 25%;
+    font-family: 'Silkscreen', cursive;
+}
+
+.descripcion-bienvenidos {
+    color: rgb(221, 221, 221);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
 .boton-ingresar {
     width: 120px;
     height: 35px;
@@ -42,19 +66,26 @@
     background-color: #258d19;
 }
 .botones {
-    margin-top: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
-.contenedor-imagen-pikachu {
-    position: absolute;
-    bottom: 10px;
+
+.pokeball-inicio {
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: contain;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    
 }
-.imagen-pikachu-saludando {
-    width: 40%;
-    height: 40%;
+
+.pokeball-inicio > img {
+    height: 60%;
+    width: 60%;
+    
 }
+
+

@@ -81,7 +81,7 @@ const Register = () => {
                     <span><p>Favor de completar los datos</p></span>
                 )}
                 Mail : 
-                <input type="email" placeholder='Mail' onChange={handleMailInputChange} />
+                <input type="email" placeholder='ejemplo@gmail.com' onChange={handleMailInputChange} />
                 <br />
                 {submitted && !userRegister.password && (
                     <span><p>Favor de completar los datos</p></span>
