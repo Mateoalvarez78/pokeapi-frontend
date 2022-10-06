@@ -2,6 +2,7 @@ import React from "react";
 import "./Login.css"
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import funcionesApi from "../api/pokemonesApi";
 
 
 const Login = () => {
@@ -24,7 +25,16 @@ const Login = () => {
         setEstadoInput({...estadoInput, password : e.target.value})
     }
 
-    console.log(estadoInput)
+    const ingresarApp = async (e) => {
+
+        e.preventDefault();
+
+        await funcionesApi.login({mail : estadoInput.mail, password : estadoInput.password})
+
+        navigate('/pokemones')
+    }
+
+    
 
     return (
         <div className="Contenedor-login">
@@ -34,7 +44,7 @@ const Login = () => {
                 <div className="descripcion-login"><p>Esta es la Pokedex, aqui podras encontrar todos tus pokemones favoritos.</p></div>
             </div>
             <div className="input">
-                <form>
+                <form onSubmit={ingresarApp}>
                     <input type="email" className="box" name="fname" placeholder="ejemplo@gmail.com" onChange={handleMailInputChange}/><br></br>
                     <input type="password" className="box" name="lname" placeholder="Contraseña" onChange={handlePasswordInputChange}/><br></br>
                     <input type="submit" value="" className="boton-submit"/>

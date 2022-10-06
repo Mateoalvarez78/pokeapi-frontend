@@ -23,13 +23,13 @@ function App() {
 
     <BrowserRouter>
     <Routes>
-      <Route path="/error" element={<Error/>}></Route>
       <Route path="/login" element={<Login/>}></Route>
       <Route path="/" element={<Inicio/>}></Route>
       <Route path="/register" element={<Register/>}></Route>
       <Route path="/agregarPokemon" element={<PostPokemon/>}></Route>
       <Route path="/pokemones" element={<Pokedex />}></Route>
       <Route path=":nombre" element={<Card/>}></Route>
+      <Route path="/*" element={<Error/>}></Route>
     </Routes>
   </BrowserRouter>
 

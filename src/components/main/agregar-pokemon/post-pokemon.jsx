@@ -13,13 +13,12 @@ const PostPokemon = () => {
         setHandleInputChange(e.target.value)
     }
     
-
     async function crearPokemon() {
         try {
            await funcionesApi.agregarPokemon(handleInputChange.toLowerCase())
             navigate('/pokemones') 
         } catch (error) {
-            console.error(error)
+            navigate('/error')
         }
         
     }
@@ -28,8 +27,6 @@ const PostPokemon = () => {
         navigate('/pokemones')
     }
 
-   
-    
     return  (
 
         <section className="container-postPokemon">    
