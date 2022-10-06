@@ -2,6 +2,7 @@ import './register.css'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import funcionesApi from '../api/pokemonesApi'
 
 const Register = () => {
 
@@ -30,12 +31,16 @@ const Register = () => {
         setUserRegister({... userRegister, password : e.target.value})
     }
 
-    const handleSubmitted = (e) => {
+    const handleSubmitted = async (e) => {
 
         e.preventDefault();
 
         if (userRegister.nombre && userRegister.apellido && userRegister.mail && userRegister.password){
             setValid(true)
+
+            await funcionesApi.agregarUser({mail : userRegister.mail, password : userRegister.password})
+
+            
         }
 
         setSubmitted(true)
