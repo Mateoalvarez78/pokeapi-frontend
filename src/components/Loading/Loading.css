@@ -1,0 +1,24 @@
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #6493eb;
+}
+
+.pikachuGif {
+  top: 0;
+}
+
+.pokeballIcon {
+  background-image: url("./assets/pokebola.png");
+  width: 100%;
+  height: 100%;
+}
+
+.loadingText {
+  width: 100%;
+  height: 100px;
+  color: white;
+  font-family: "Silkscreen", cursive;
+}
