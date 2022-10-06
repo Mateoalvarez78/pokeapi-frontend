@@ -35,17 +35,39 @@ const funcionesApi = {
       });
   },
 
-  registerUser: async (data) => {
-    const url = "/registro";
-    const body = { mail: data.mail, password: data.password };
-    console.log(data);
+  agregarPokemon: async (nombre) => {
+    const url = "/agregarPokemon";
+    const body = { nombre: nombre };
+
     return await apiPokemones
       .post(url, body)
-      .then((res) => {
-        if (res.data.length > 0) {
-          return res.data.satus;
-        }
-      })
+
+      .catch((err) => {
+        console.log("Error: ", err);
+        throw err;
+      });
+  },
+
+  agregarUser: async (data) => {
+    const url = "/registro";
+    const body = { mail: data.mail, password: data.password };
+    console.log("body:: ", body);
+    return await apiPokemones
+      .post(url, body)
+
+      .catch((err) => {
+        console.log("Error: ", err);
+        throw err;
+      });
+  },
+
+  login: async (data) => {
+    const url = "/login";
+    const body = { mail: data.mail, password: data.password };
+    console.log("body:: ", body);
+    return await apiPokemones
+      .post(url, body)
+
       .catch((err) => {
         console.log("Error: ", err);
         throw err;

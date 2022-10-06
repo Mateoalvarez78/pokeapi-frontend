@@ -49,92 +49,102 @@ const Register = () => {
       await funcionesApi.registerUser(newUser);
     }
 
-    setSubmitted(true);
+    const handleSubmitted = async (e) => {
+      // useEffect(() => {
+      //   if (valid && submitted) {
+      //     navigate("/pokemones");
+      //   }
+      // }, [valid, submitted]);
+
+      if (
+        userRegister.nombre &&
+        userRegister.apellido &&
+        userRegister.mail &&
+        userRegister.password
+      ) {
+        setValid(true);
+
+        await funcionesApi.agregarUser({
+          mail: userRegister.mail,
+          password: userRegister.password,
+        });
+      }
+
+      const regresarLogin = () => {
+        navigate("/");
+      };
+
+      return (
+        <section className="container-register">
+          <form
+            action="registrar"
+            className="formulario-registrar"
+            onSubmit={handleSubmitted}
+          >
+            <h2>Registrate!!</h2>
+            {submitted && valid && (
+              <div className="registro-aprovado">REGISTRO EXITOSO!!</div>
+            )}
+            <br />
+            {submitted && !userRegister.nombre && (
+              <span>
+                <p>Favor de completar los datos</p>
+              </span>
+            )}
+            Nombre :
+            <input
+              type="text"
+              placeholder="Nombre"
+              onChange={handleNombreInputChange}
+            />
+            <br />
+            {submitted && !userRegister.apellido && (
+              <span>
+                <p>Favor de completar los datos</p>
+              </span>
+            )}
+            Apellido :
+            <input
+              type="text"
+              placeholder="Apellido"
+              onChange={handleApellidoInputChange}
+            />
+            <br />
+            {submitted && !userRegister.mail && (
+              <span>
+                <p>Favor de completar los datos</p>
+              </span>
+            )}
+            Mail :
+            <input
+              type="email"
+              placeholder="ejemplo@gmail.com"
+              onChange={handleMailInputChange}
+            />
+            <br />
+            {submitted && !userRegister.password && (
+              <span>
+                <p>Favor de completar los datos</p>
+              </span>
+            )}
+            Password :
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={handlePasswordInputChange}
+            />
+            <br />
+            <button className="botonAgregar" type="submit">
+              Enviar
+            </button>
+            <button className="botonRegresar" onClick={regresarLogin}>
+              Regresar
+            </button>
+          </form>
+        </section>
+      );
+    };
   };
-
-  // useEffect(() => {
-  //   if (valid && submitted) {
-  //     navigate("/pokemones");
-  //   }
-  // }, [valid, submitted]);
-
-  // const ingresarUsuario = () => {
-  //   navigate("/pokemones");
-  // };
-
-  const regresarLogin = () => {
-    navigate("/");
-  };
-
-  return (
-    <section className="container-register">
-      <form
-        action="registrar"
-        className="formulario-registrar"
-        onSubmit={handleSubmitted}
-      >
-        <h2>Registrate!!</h2>
-        {submitted && valid && (
-          <div className="registro-aprovado">REGISTRO EXITOSO!!</div>
-        )}
-        <br />
-        {submitted && !userRegister.nombre && (
-          <span>
-            <p>Favor de completar los datos</p>
-          </span>
-        )}
-        Nombre :
-        <input
-          type="text"
-          placeholder="Nombre"
-          onChange={handleNombreInputChange}
-        />
-        <br />
-        {submitted && !userRegister.apellido && (
-          <span>
-            <p>Favor de completar los datos</p>
-          </span>
-        )}
-        Apellido :
-        <input
-          type="text"
-          placeholder="Apellido"
-          onChange={handleApellidoInputChange}
-        />
-        <br />
-        {submitted && !userRegister.mail && (
-          <span>
-            <p>Favor de completar los datos</p>
-          </span>
-        )}
-        Mail :
-        <input
-          type="email"
-          placeholder="ejemplo@gmail.com"
-          onChange={handleMailInputChange}
-        />
-        <br />
-        {submitted && !userRegister.password && (
-          <span>
-            <p>Favor de completar los datos</p>
-          </span>
-        )}
-        Password :
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={handlePasswordInputChange}
-        />
-        <br />
-        <button className="botonAgregar" type="submit">
-          Enviar
-        </button>
-        <button className="botonRegresar" onClick={regresarLogin}>
-          Regresar
-        </button>
-      </form>
-    </section>
-  );
 };
 
 export default Register;
