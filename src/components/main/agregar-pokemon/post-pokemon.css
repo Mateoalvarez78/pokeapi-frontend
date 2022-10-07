@@ -53,8 +53,8 @@
 }
 
 .botonRegresar {
-    width: 67px;
-    height: 25px;
+    width: 85px;
+    height: 35px;
     font-size: x-small;
     border-radius: 10%;
     border: 1px solid white;
@@ -63,4 +63,43 @@
     background-color: yellow;
     cursor: pointer;
     margin-top: 15px;
+}
+
+.modal-postPokemon{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/fondo-modal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.pikachu-feliz {
+    background-image: url("./assets/pikachu_saludando.png");
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    top: 120px;
+}
+
+.modal-postPokemon > button {
+    height: 30px;
+    width: 70px;
+    border-radius: 10px;
+    position: relative;
+    top: 70px;
+    background-color: blue;
+    border: 1px solid white;
+    color: white;
+}
+
+.modal-postPokemon > h2 {
+    font-family: 'Silkscreen', cursive;
 }
