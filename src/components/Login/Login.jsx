@@ -11,7 +11,8 @@ const Login = () => {
     const [estadoInput, setEstadoInput] = useState ({
         mail: "",
         password : ""
-    })
+    });
+    const [submitted, setSubmitted] = useState(false);
 
     const regresarAInicio = () => {
         navigate('/')
@@ -29,8 +30,8 @@ const Login = () => {
 
         e.preventDefault();
 
+        setSubmitted(true)
         await funcionesApi.login({mail : estadoInput.mail, password : estadoInput.password})
-
         navigate('/pokemones')
     }
 
@@ -45,7 +46,10 @@ const Login = () => {
             </div>
             <div className="input">
                 <form onSubmit={ingresarApp}>
+
+                    {!estadoInput.mail && submitted && (<span><p>Favor de completar los datos</p></span>)}   
                     <input type="email" className="box" name="fname" placeholder="ejemplo@gmail.com" onChange={handleMailInputChange}/><br></br>
+                    {!estadoInput.password && submitted && (<span><p>Favor de completar los datos</p></span>)}  
                     <input type="password" className="box" name="lname" placeholder="Contraseña" onChange={handlePasswordInputChange}/><br></br>
                     <input type="submit" value="" className="boton-submit"/>
                 </form>

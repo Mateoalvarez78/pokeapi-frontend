@@ -14,7 +14,7 @@
 }
 
 .volver-atras {
-    height: 15%;
+    height: 30px;
     display: flex;
     position: relative;
     right: 120px;
@@ -23,8 +23,8 @@
 
 .volver-atras > img{
     margin: auto;
-    width: 10%;
-    height: 40%; 
+    width: 40px;
+    height: 40px; 
     transform: scale(100%);
 }
 
@@ -63,7 +63,11 @@
     width: 250px;
     border-radius: 7px;
     box-shadow: none;
-    margin: 20px 0;
+    margin: 5px 0;
+}
+
+form {
+    margin-top: 15px;
 }
 .boton-submit {
     margin-top: 20px;
@@ -74,4 +78,11 @@
     height: 65px;
     border: none;
     cursor: pointer;
+}
+
+span {
+    color: rgb(255, 0, 0);
+    font-family:monospace;
+    font-size: large;
+    font-weight: bold;
 }

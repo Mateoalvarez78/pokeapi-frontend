@@ -4,6 +4,7 @@ import Porcentajes from "./abouts-component"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import funcionesApi from "../api/pokemonesApi";
 
@@ -11,7 +12,7 @@ const Card = () => {
     
         const [pokemonApi, setPokemonApi] = useState([])
         const [stats, setStats] = useState([])
-       
+        const navigate = useNavigate()
 
         let {nombre} = useParams()
 
@@ -36,40 +37,30 @@ const Card = () => {
          })
        
         let pokemon = todosLosPokemones
-            
+        
         
         
        
-    /*
+    
 
     function moverIzquierda ()  {
-        let index = pokemon.findIndex((poke) => poke.nombre === nombre)
-
-        if(index === 0){
-            let pokemonAnterior = POKE_ARRAY[POKE_ARRAY.length - 1]
-            navigate("/" + pokemonAnterior.nombre)
+        let index = todosLosPokemones.find((item) => item.name == nombre) 
+        if(index.name === nombre){
+            let pokemonAnterior = pokemonApi.find((item) => item.id == (Number(index.id) - 1))
+            navigate("/" + pokemonAnterior.name)
             return
         }
-        
-        let pokemonAnterior = POKE_ARRAY[index - 1]
-        navigate("/" + pokemonAnterior.nombre)
-
-       
     }
 
     function moverDerecha () {
-        let index = pokemon.findIndex((pokemon) => pokemon.nombre === nombre)
-        
-        if (index === POKE_ARRAY.length - 1){
-            let pokemonSiguiente = POKE_ARRAY[0]
-            navigate("/" + pokemonSiguiente.nombre)
+        let index = todosLosPokemones.find((item) => item.name == nombre) 
+        console.log("index ::",index)
+        if (index.name === nombre){
+            let pokemonSiguiente = pokemonApi.find((item) => item.cod == (Number(index.id) + 1))
+            navigate("/" + pokemonSiguiente.name)
             return
         }
-
-        let pokemonSiguiente = POKE_ARRAY[index + 1]
-        navigate("/" + pokemonSiguiente.nombre)
-        
-    } */
+    } 
 
     return (
         <div className="Contenedor-principal">
@@ -83,8 +74,8 @@ const Card = () => {
                     <img className="Imagen-pokeball" src ="./Img/pokeball-blanca.png" alt="pokeball"/>
                 </div>
                 <div className="botones-derecha-izquierda">
-                   <div /*onClick={moverIzquierda}*/ className="mover-izquierda"> &lt; </div>
-                    <div /*onClick={moverDerecha}*/ className="mover-derecha"> &gt; </div> 
+                   <div onClick={moverIzquierda} className="mover-izquierda"> &lt; </div>
+                    <div onClick={moverDerecha} className="mover-derecha"> &gt; </div> 
                 </div>
                 
                 <div className="Contenedor-name-id-pk">
